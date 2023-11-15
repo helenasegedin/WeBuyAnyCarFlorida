@@ -1,0 +1,334 @@
+{{!< layouts/main}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>High Palm Motors</title>
+  <!-- Site core CSS -->
+  <link rel="stylesheet" href="https://use.typekit.net/faj6ojr.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="/css/main.css?e1d4e6b" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="http://localhost/webuyanycarflorida.com//apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="http://localhost/webuyanycarflorida.com//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="http://localhost/webuyanycarflorida.com//favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+
+<div class="one column stackable ui grid">
+
+  <!-- Desktop View -->
+  <div class="row equal-height">
+
+    <!-- Logo column (25%) -->
+    <button class="burger-menu ui segment icon button" onclick="toggleMenu()">
+      <i class="bars icon"></i>
+    </button>
+
+    <div class="header-area logo four wide column">
+
+      <!-- Mobile Navbar -->
+      <div class="ui segment vertical menu mobile-menu" id="mobile-menu" style="display: none;">
+        <a class="item" href="/">HOME</a>
+        <a class="item" href="/book-your-appointment">BOOK YOUR APPOINTMENT</a>
+        <a class="item" href="/how-it-works">HOW IT WORKS</a>
+        <a class="item" href="/contact-us">CONTACT US</a>    </div>
+
+      <img src="/img/HPM_LOGO.png" alt="logo" id="logo">
+
+      <!-- Navbar -->
+      <div class="header-navbar row ui equal-height" style="height: 54px">
+        <div class="ui secondary menu"></div>
+      </div>
+
+      <!-- Filler space -->
+      <div class="header-filler second_row row equal-height"></div>
+
+      <!-- Motto with icon -->
+      <div class="header-motto row equal-height"></div>
+
+    </div>
+
+
+    <!-- Content column (75%) -->
+    <div class="header-area twelve wide column">
+
+      <!-- Navbar -->
+      <div id="header-navbar" class="header-navbar row ui equal-height">
+        <div class="ui secondary menu">
+          <a class="item" href="/">HOME</a>
+          <a class="item" href="/book-your-appointment">BOOK YOUR APPOINTMENT</a>
+          <a class="item" href="/how-it-works">HOW IT WORKS</a>
+          <a class="item" href="/contact-us">CONTACT US</a>  </div>
+      </div>
+      <!-- Filler space -->
+      <div class="header-filler second_row row equal-height"></div>
+
+      <!-- Motto with icon -->
+      <div class="row">
+        <div class="header-motto ui grid">
+          <div class="twelve wide column" style="width: auto !important;">
+            <h2 id="motto">We buy any car and we pay the best price!</h2>
+          </div>
+          <div id="cash_img_container" class="column cash-container">
+            <img class="cash_img" alt="cash" src="/img/HPM_ICON_CASH.png"/>
+          </div>
+        </div>
+      </div>  </div>
+
+  </div>  <!-- HOME -->
+  <style>
+    .blue-background {
+      background-color: #1a91c2;
+    }
+  </style>
+  <div class="row equal-height blue-background">
+
+    <!-- Start here -->
+    <div class="form_container row">
+      <div class="first_column eight wide column">
+      </div>
+      <div class="form_box eight wide column">
+        <img class="start_img" alt="StartHere" src="/img/startHere.png">
+        <form class="horizontal-form" action="/submitForm" method="post">
+          <div class="form_row">
+            <label class="form_label" for="input1">VIN</label><br>
+            <input class="form_input" type="text" id="input1" name="input1">
+          </div>
+          <div class="form_row">
+            <label class="form_label" for="input2">MAKE</label><br>
+            <input class="form_input" type="text" id="input2" name="input2">
+          </div>
+          <div class="form_row">
+            <label class="form_label" for="input3">MODEL</label><br>
+            <input class="form_input" type="text" id="input3" name="input3">
+          </div>
+          <div class="form_row">
+            <label class="form_label" for="input4">YEAR</label><br>
+            <input class="form_input" type="text" id="input4" name="input4">
+          </div>
+        </form>
+        <input type="submit" value="CONTINUE">
+      </div>
+    </div>
+
+    <div class="modal" id="userDataModal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <form id="userDataForm">
+          <label for="userName">Name:</label>
+          <input type="text" id="userName" name="userName">
+
+          <label for="userEmail">Email:</label>
+          <input type="email" id="userEmail" name="userEmail">
+
+          <input type="submit" value="Submit" onclick="submitUserData()">
+        </form>
+      </div>
+    </div>
+
+    <!-- Guide & Customer Reviews -->
+    <div class="guideContainer">
+      <div class="main-container">
+        <div class="guideCustomer">
+          <div class="circle">
+            <div class="guide-text">
+              <svg class="svg_file" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="outline">
+                    <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="3"/>
+                    <feFlood flood-color="#002f6c" result="COLOR"/>
+                    <feComposite in="COLOR" in2="DILATED" operator="in" result="OUTLINE"/>
+                    <feMerge>
+                      <feMergeNode in="OUTLINE"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+                <text x="10" y="100" font-family="MyriadPro-Bold" fill="#fff" letter-spacing="1" filter="url(#outline)">
+                  1.
+                </text>
+              </svg>
+              <svg class="svg_file" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="outline">
+                    <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="3"/>
+                    <feFlood flood-color="#002f6c" result="COLOR"/>
+                    <feComposite in="COLOR" in2="DILATED" operator="in" result="OUTLINE"/>
+                    <feMerge>
+                      <feMergeNode in="OUTLINE"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+                <text x="10" y="100" font-family="MyriadPro-Bold" fill="#fff" letter-spacing="1" filter="url(#outline)">
+                  SEND US THE CAR DETAILS
+                </text>
+              </svg>
+            </div>
+            <img id="details-img" class="guide_img" src="/img/HPM_ICON_CAR DETAILS.png" alt="Image 1">
+          </div>
+          <div class="circle">
+            <div class="guide-text">
+              <svg class="svg_file" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="outline">
+                    <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="3"/>
+                    <feFlood flood-color="#002f6c" result="COLOR"/>
+                    <feComposite in="COLOR" in2="DILATED" operator="in" result="OUTLINE"/>
+                    <feMerge>
+                      <feMergeNode in="OUTLINE"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+                <text x="10" y="100" font-family="MyriadPro-Bold" fill="#fff" letter-spacing="1" filter="url(#outline)">
+                  2.
+                </text>
+              </svg>
+              <svg class="svg_file" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="outline">
+                    <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="3"/>
+                    <feFlood flood-color="#002f6c" result="COLOR"/>
+                    <feComposite in="COLOR" in2="DILATED" operator="in" result="OUTLINE"/>
+                    <feMerge>
+                      <feMergeNode in="OUTLINE"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+                <text x="10" y="100" font-family="MyriadPro-Bold" fill="#fff" letter-spacing="1" filter="url(#outline)">
+                  BOOK YOUR APPOINTMENT
+                </text>
+              </svg>
+            </div>
+            <img id="date-img" class="guide_img" src="/img/HPM_ICON_DATE.png" alt="Image 2">
+          </div>
+          <div class="circle">
+            <div class="guide-text">
+              <svg class="svg_file" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="outline">
+                    <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="3"/>
+                    <feFlood flood-color="#002f6c" result="COLOR"/>
+                    <feComposite in="COLOR" in2="DILATED" operator="in" result="OUTLINE"/>
+                    <feMerge>
+                      <feMergeNode in="OUTLINE"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+                <text x="10" y="100" font-family="MyriadPro-Bold" fill="#fff" letter-spacing="1" filter="url(#outline)">
+                  3.
+                </text>
+              </svg>
+              <svg class="svg_file" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="outline">
+                    <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="3"/>
+                    <feFlood flood-color="#002f6c" result="COLOR"/>
+                    <feComposite in="COLOR" in2="DILATED" operator="in" result="OUTLINE"/>
+                    <feMerge>
+                      <feMergeNode in="OUTLINE"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+                <text x="10" y="100" font-family="MyriadPro-Bold" fill="#fff" letter-spacing="1" filter="url(#outline)">
+                  GET YOUR CHECK
+                </text>
+              </svg>
+            </div>
+            <img id="check-img" class="guide_img" src="/img/HPM_ICON_CHECK.png" alt="Image 3">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Cards -->
+    <div class="card-row">
+      <div class="card">
+        <h2 class="card-title">E.Xample</h2>
+        <p class="card-text">“ I wanted a good car, instead I got a great one! “</p>
+        <p class="card-bottom">G.Reat</p>
+
+      </div>
+      <div class="card">
+        <h2 class="card-title">C.Ustomer</h2>
+        <p class="card-text">“ I wanted a good car, instead I got a great one! “</p>
+        <p class="card-bottom">S.Ervice</p>
+      </div>
+      <div class="card">
+        <h2 class="card-title">R.Eview</h2>
+        <p class="card-text">“ I wanted a good car, instead I got a great one! “</p>
+        <p class="card-bottom">E.Veryday</p>
+      </div>
+    </div>
+  </div>
+  <div class="column footer">
+    <div class="footer-content">
+      <div class="footer-text">
+        <h3 class="footer-contact-title">CONTACT INFORMATION</h3>
+        <h3 class="footer-contact">EXAMPLE STREET 123,<br>
+          SOMEWHERE, OVER THERE<br>
+          012 01234<br><br></h3>
+        <h3 class="web-name footer-contact">WWW.BUYANYCARDPLACEHOLDER.COM</h3>
+      </div>
+      <img class="map_img" alt="testmap" src="/img/test_map.png">
+    </div>
+  </div>
+</div>
+
+
+<script>
+  function toggleMenu() {
+    var menu = document.getElementById("mobile-menu");
+    menu.style.display = menu.style.display === "none" ? "block" : "none";
+  }
+
+  function openModal() {
+    const modal = document.getElementById('userDataModal');
+    modal.style.display = 'block';
+  }
+
+  // Close the modal
+  function closeModal() {
+    const modal = document.getElementById('userDataModal');
+    modal.style.display = 'none';
+  }
+
+  // Submit user data
+  async function submitUserData() {
+    // Fetch the user data from the form
+    const userName = document.getElementById('userName').value;
+    const userEmail = document.getElementById('userEmail').value;
+
+    // Implement logic to send the user data to the server
+    const response = await fetch('/submitUserData', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ userName, userEmail }),
+    });
+
+    // Close the modal after submission
+    closeModal();
+  }
+</script>
+</body>
+<script>
+  // Error translations
+  SERVER_ERROR_UNKNOWN_FORMAT = 'Server returned response in an unexpected format';
+  SERVER_ERROR_FORBIDDEN = 'Forbidden';
+  SERVER_ERROR_OTHER = 'Server returned an error. Please try again later';
+</script>
+</html>
